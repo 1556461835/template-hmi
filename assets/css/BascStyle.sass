@@ -1,0 +1,111 @@
+@import "./themeVariable"
+/*头部样式*/
+.layout-header
+  @include themify($themes)
+    height: $layout-header-height
+    width: 100%
+    padding: 0 10px
+    font-size: 14px
+    overflow: hidden
+    box-sizing: border-box
+    background-color: themed('background-color')
+    .layout-warn
+      min-width: 842px
+      margin-left: 70px
+      .layout-warn-info
+        height: 28px
+        opacity: 1
+        background: themed('layout-warn-info-background')
+        border-radius: 4px
+        line-height: 28px
+        padding: 0 16px
+
+    .layout-head-user-time
+      margin-right: 24px
+      font-size: 14px
+      color: themed('layout-head-user-time-color')
+      font-weight: 400
+
+    .layout-head-them
+      padding-right: 14px
+      font-size: 15px
+      font-weight: 700
+/*container样式*/
+.app-container
+  @include themify($themes)
+    /*左边菜单样式*/
+    .el-menu-parentDiv
+      width: $layout-aside-width
+      background-color: themed('left-menu-background')
+    .el-submenu .el-menu-item
+      min-width: unset
+
+    /* 侧导航栏宽度 */
+    .el-menu-vertical-demo:not(.el-menu--collapse)
+      border: 0px
+      width: $layout-aside-width
+      left: 0px
+    .el-menu-vertical-demo
+      border: 0px
+      width: 60px
+
+    /*右边布局样式*/
+    .right-aside
+      width: $layout-aside-width
+      background-color: themed('background-color')
+      box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.16)
+      border-radius: 4px
+      box-sizing: border-box
+    .right-aside-title
+      height: 46px
+      line-height: 45px
+    .rowInfo
+      height: 20px
+      line-height: 20px
+
+/*子页面相关*/
+.xw_main
+  @include themify($themes)
+    background-color: themed('background-color')
+    height: calc(100% - 20px)
+    padding: 10px
+    .xw_marginTB
+      margin-top: $marginPadding
+      margin-bottom: $marginPadding
+    .xw_textAlignRight
+      text-align: right
+    .xw_textAlignLeft
+      text-align: left
+    .xw_textAlignCenter
+      text-align: center
+    .xw_titleName
+      font-size: 16px
+      font-weight: bold
+      color: themed('font-color')
+
+/*原生table*/
+.L-table 
+  @include themify($themes)
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    display: table;
+    table-layout: fixed;
+    border: 1px solid #cccdd4;
+    th
+      font-weight: 700;
+      background-color: themed('table-th-background')
+      color: themed('table-th-color')
+      height: 32px;
+    td 
+      font-weight: 400;
+      color: rgba(0, 0, 0, 0.75);
+      padding: 4px;
+  
+.L-table th,
+.L-table td 
+  border: 1px solid #cccdd4;
+  font-size: 14px;
+  display: table-cell;
+  text-align: center;
+  font-family: PingFang SC, PingFang SC-Bold;

@@ -1,0 +1,102 @@
+@import "./themeVariable"
+.app-container
+  @include themify($themes)
+    /*菜单-menu*/
+    .el-submenu .el-menu-item
+      min-width: unset
+    .el-menu
+      border: none
+      height: 100%
+      background-color: themed('left-menu-background')
+      .el-submenu .el-submenu__title,.el-menu-item
+        color: themed('left-menu-color')
+
+      .el-menu-item.is-active
+        color: themed('left-meun-color-active')
+        background-color: themed('left-meun-background-active')
+
+      .el-menu-item:hover
+        background-color: themed('left-menu-hover') !important
+        color: themed('left-meun-color-active') !important
+        i
+          color: themed('left-meun-color-active')
+
+      //设置鼠标悬停时el-submenu的样式
+      .el-submenu .el-submenu__title:hover
+        background-color: themed('left-menu-hover') !important
+        color: themed('left-meun-color-active') !important
+        i
+          color: themed('left-meun-color-active')
+    /*表单-form*/
+    /*此类名用于校验显示提示信息*/
+    .demo-ruleForm
+      .el-form-item 
+        margin-bottom: 22px
+    .el-form-item
+      margin-bottom: 0px
+      .el-form-item__content,.el-form-item__label
+        line-height: 30px
+    
+    .el-form--label-top .el-form-item__label
+      padding: 0px
+
+    /*input*/
+    .el-date-editor .el-range-separator
+      line-height: 20px
+    .el-input__inner, .el-input__icon
+      height: 24px
+      line-height: 24px
+    .el-input__inner
+      background-color: themed('form-background')
+      border: 1px solid themed('form-bord')
+      padding: 2px;
+      min-width: 72px;
+      font-size: 14px;
+      border-radius: 3px;
+      font-family: PingFang SC, PingFang SC-Bold;
+      height: 24px;
+    .el-input.is-disabled
+      .el-input__inner
+        background-color: themed('form-background-disabled')
+        border-color: themed('form-bord-disabled')
+        color: themed('font-color')
+        padding: 2px;
+        min-width: 72px;
+        font-size: 14px;
+        border-radius: 3px;
+        font-family: PingFang SC, PingFang SC-Bold;
+        height: 24px;
+    .el-select 
+      width: 100%
+      .el-input .el-select__caret
+      color: themed('font-color')
+    /*button*/
+    .el-button--mini, .el-button--mini.is-round
+      padding: 5px 15px
+
+    /*表格-table*/
+    .el-table td, .el-table th
+      padding: 1px 0px
+    .el-table th
+        background-color: themed('table-th-background')
+        color: themed('table-th-color')
+
+
+    /*分割线*/
+    .el-divider--horizontal
+      margin: 5px 0px 10px 0px
+
+    /*标签页-tab*/
+    .el-tabs--border-card
+      box-shadow: unset
+      .el-tabs__header
+        border-bottom: 1px solid themed('tab-border')
+        .el-tabs__item
+          height: 34px
+          line-height: 34px
+        .el-tabs__item.is-active
+          background-color: themed('tab-background')
+          color: themed('tab-color')
+
+      .el-tabs__content
+        padding: unset

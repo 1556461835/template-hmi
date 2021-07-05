@@ -1,0 +1,55 @@
+$layout-main-background-color: #ffffff;
+$layout-aside-width: 160px;
+$layout-header-height: 88px;
+$marginPadding: 7px;
+/******************************************深色系******************************************/
+//常规
+$deep-layout-main-background-color: pink;
+$deep-color: purple;
+//头部
+$deep-layout-warn-info-background:red;
+$deep-layout-head-user-time-color: blue;
+//左侧菜单
+$deep-left-menu-background: yellow;
+$deep-left-menu-color: red;
+$deep-left-menu-hover: green;
+$deep-left-menu-background-active: pink;
+$deep-left-menu-color-active: $deep-left-menu-color;
+//表格
+$deep-table-th-background: gray; //表格头部背景色
+$deep-table-th-color: black; //表格字体颜色
+//表单
+$deep-form-background: orange;
+$deep-form-border: $deep-table-th-background;
+$deep-form-background-disabled: #F5F5F5;
+$deep-form-border-disabled: #CCCDD4;
+//标签页-tab
+$deep-tab-border: $deep-table-th-background;
+$deep-tab-background: $deep-table-th-background;
+$deep-tab-color: $deep-table-th-color;
+
+/******************************************浅色系******************************************/
+//常规
+$light-layout-main-background-color: #ffffff;
+$light-color: #000000;
+//头部
+$light-layout-warn-info-background:rgba(0, 0, 0, 0.05);
+$light-layout-head-user-time-color: rgba(0, 0, 0, 0.5);
+//左侧菜单
+$light-left-menu-background: #263360;
+$light-left-menu-color: #fff;
+$light-left-menu-hover: rgba(30,41,77, 0.5);
+$light-left-menu-background-active: #409EFF;
+$light-left-menu-color-active: $light-left-menu-color;
+//表格
+$light-table-th-background: #409EFF; //表格头部背景色
+$light-table-th-color: #FFFFFF; //表格字体颜色
+//表单
+$light-form-background: #F6FAFF;
+$light-form-border: $light-table-th-background;
+$light-form-background-disabled: #F5F5F5;
+$light-form-border-disabled: #cccdd4;
+//标签页-tab
+$light-tab-border: $light-table-th-background;
+$light-tab-background: $light-table-th-background;
+$light-tab-color: $light-table-th-color

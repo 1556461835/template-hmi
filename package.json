@@ -1,0 +1,42 @@
+{
+  "name": "hmi",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "precommit": "npm run lint",
+    "pm2": "pm2 start ./node_modules/nuxt/bin/nuxt.js --name hmi --watch -- dev"
+  },
+  "dependencies": {
+    "@nuxtjs/axios": "^5.13.1",
+    "core-js": "^3.9.1",
+    "crypto-js": "^4.0.0",
+    "echarts": "^5.0.2",
+    "element-ui": "^2.15.1",
+    "jsencrypt": "^3.1.0",
+    "lodash": "^4.17.21",
+    "md5": "^2.3.0",
+    "moment": "^2.29.1",
+    "nuxt": "^2.15.3",
+    "screenfull": "^5.1.0",
+    "uuid": "^8.3.2",
+    "vue-i18n": "^8.24.4",
+    "vuex-persistedstate": "^4.0.0-beta.3"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.2.1",
+    "eslint": "^7.23.0",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-loader": "^4.0.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-prettier": "^2.6.2",
+    "eslint-plugin-vue": "^7.8.0",
+    "node-sass": "^4.14.1",
+    "prettier": "^1.14.3",
+    "sass-loader": "^8.0.2"
+  }
+}

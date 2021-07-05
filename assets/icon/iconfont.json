@@ -1,0 +1,86 @@
+{
+  "id": "2504752",
+  "name": "hmi",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "6246305",
+      "name": "主机",
+      "font_class": "zhuji",
+      "unicode": "e64f",
+      "unicode_decimal": 58959
+    },
+    {
+      "icon_id": "7551984",
+      "name": "主机",
+      "font_class": "zhuji1",
+      "unicode": "e6aa",
+      "unicode_decimal": 59050
+    },
+    {
+      "icon_id": "14683363",
+      "name": "gis-js-阀门井",
+      "font_class": "gis-js-famenjing",
+      "unicode": "e62e",
+      "unicode_decimal": 58926
+    },
+    {
+      "icon_id": "7335633",
+      "name": "阀门",
+      "font_class": "famen",
+      "unicode": "eb47",
+      "unicode_decimal": 60231
+    },
+    {
+      "icon_id": "1104730",
+      "name": "通用类_报警",
+      "font_class": "tongyongleibaojing",
+      "unicode": "ea36",
+      "unicode_decimal": 59958
+    },
+    {
+      "icon_id": "6311139",
+      "name": "换肤",
+      "font_class": "huanfu1",
+      "unicode": "e622",
+      "unicode_decimal": 58914
+    },
+    {
+      "icon_id": "183381",
+      "name": "换肤",
+      "font_class": "huanfu",
+      "unicode": "e620",
+      "unicode_decimal": 58912
+    },
+    {
+      "icon_id": "2356560",
+      "name": "全屏",
+      "font_class": "screenfull",
+      "unicode": "e824",
+      "unicode_decimal": 59428
+    },
+    {
+      "icon_id": "7556168",
+      "name": "关闭全屏",
+      "font_class": "guanbiquanping",
+      "unicode": "e602",
+      "unicode_decimal": 58882
+    },
+    {
+      "icon_id": "14095241",
+      "name": "隐藏",
+      "font_class": "yincang",
+      "unicode": "e777",
+      "unicode_decimal": 59255
+    },
+    {
+      "icon_id": "18211075",
+      "name": "显示",
+      "font_class": "xianshi",
+      "unicode": "e7a5",
+      "unicode_decimal": 59301
+    }
+  ]
+}

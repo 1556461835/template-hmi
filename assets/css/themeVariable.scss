@@ -1,0 +1,78 @@
+@import "./variable";
+/*******************************************两种主题*******************************************/
+$themes: (
+  /*********************深色系*********************/
+  them-deep: (
+    //常规
+    font-color: $deep-color,
+    background-color: $deep-layout-main-background-color,
+    //头部样式
+    layout-warn-info-background:$deep-layout-warn-info-background,
+    layout-head-user-time-color: $deep-layout-head-user-time-color,
+    //左侧菜单
+    left-menu-background:$deep-left-menu-background,
+    left-menu-color:$deep-left-menu-color,
+    left-menu-hover: $deep-left-menu-hover,
+    left-meun-background-active: $deep-left-menu-background-active,
+    left-meun-color-active: $deep-left-menu-color-active,
+    //表格
+    table-th-background: $deep-table-th-background, //表格头部背景色
+    table-th-color: $deep-table-th-color, //表格字体颜色
+    //表单
+    form-background: $deep-form-background, //禁用表单背景色
+    form-bord:$deep-form-border, //表单边框颜色
+    form-background-disabled: $deep-form-background-disabled, //禁用表单背景色
+    form-bord-disabled: $deep-form-background-disabled, //禁用表单背景色
+    //标签页-tab
+    tab-background:$deep-tab-background, //tab背景色
+    tab-border: $deep-tab-border, //tab边框颜色
+    tab-color:$deep-tab-color, //tab字体颜色
+  ),
+  /*********************浅色系*********************/
+  them-light: (
+    //常规
+    font-color: $light-color,
+    background-color: $light-layout-main-background-color,
+    //头部样式
+    layout-warn-info-background:$light-layout-warn-info-background,
+    layout-head-user-time-color: $light-layout-head-user-time-color,
+    //左侧菜单
+    left-menu-background:$light-left-menu-background,
+    left-menu-color:$light-left-menu-color,
+    left-menu-hover: $light-left-menu-hover,
+    left-meun-background-active: $light-left-menu-background-active,
+    left-meun-color-active: $light-left-menu-color-active,
+    //表格
+    table-th-background: $light-table-th-background, //表格头部背景色
+    table-th-color: $light-table-th-color, //表格字体颜色
+    //表单
+    form-background: $light-form-background, //禁用表单背景色
+    form-bord:$light-form-border, //表单边框颜色
+    form-background-disabled: $light-form-background-disabled, //禁用表单背景色
+    form-bord-disabled: $light-form-border-disabled, //禁用表单背景色
+    //标签页-tab
+    tab-background:$light-tab-background, //tab背景色
+    tab-border: $light-tab-border, //tab边框颜色
+    tab-color:$light-tab-color, //tab字体颜色
+  ),
+);
+
+@mixin themify($themes: $themes) {
+  @each $theme-name, $map in $themes {
+
+    .theme-#{$theme-name} & {
+      $theme-map: () !global;
+      @each $key, $value in $map {
+        $theme-map: map-merge($theme-map, ($key: $value)) !global;
+      }
+
+      @content;
+
+      $theme-map: null !global;
+    }
+  }
+}
+
+@function themed($key) {
+  @return map-get($theme-map, $key);
+}
