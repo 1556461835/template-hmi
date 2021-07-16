@@ -1,29 +1,23 @@
 <!--
  * @Author: your name
  * @Date: 2021-04-07 13:58:25
- * @LastEditTime: 2021-06-21 22:51:15
+ * @LastEditTime: 2021-07-09 16:38:43
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \hmi\layouts\default.vue
 -->
 <template>
   <div :class="themeClass">
-    <!-- 头部栏 -->
     <Header :navigation-menu="navigationMenu" @clickMenus="handleMenusClick" @changeThem="changeThem"></Header>
-    <el-container class="app-container" :style="'height:' + (parseInt(windowHeight) - 110) + 'px;'" >
-      <!-- 左边栏 -->
-      <Aside :nav-menus='menus' :editable-tabs-value='checkPath'></Aside>
-      <!-- 中间部分 -->
-      <el-container>
+    <el-container class="app-container">
+      <Aside :style="'height:' + (parseInt(windowHeight) - 88) + 'px;'" :nav-menus='menus' :editable-tabs-value='checkPath' ></Aside>
+      <el-container :style="'height:' + (parseInt(windowHeight) - 88) + 'px;'">
         <div class="layout-webkitScrollbar main">
           <nuxt />
         </div>
-        <!-- 右边栏 -->
-        <!-- <right-aside></right-aside> -->
+        <right-aside></right-aside>
       </el-container>
     </el-container>
-    <!-- 底部显示 -->
-    <layout-footer/>
     <el-dialog
       :visible.sync="isShow"
       :close-on-click-modal="false"
@@ -46,14 +40,14 @@
 <script>
 import Header from './components/Header'
 import Aside from './components/Aside'
-import LayoutFooter from './components/Footer'
+import RightAside from './components/RightAside'
 import moment from 'moment'
 import { GET_USER_MENUS } from '@/lib/ApiURL'
 import WebSocketService from '@/lib/WebSocketService'
 import { fixMenus, $post, loginByToken, getConfig } from '@/lib/Util'
 import { stopGetData } from '@/lib/GetData'
 export default {
-  components: { Header, Aside, LayoutFooter },
+  components: { Header, Aside, RightAside },
   data() {
     return {
       msg: 'Dynamic Themes',
@@ -196,8 +190,6 @@ export default {
       this.isShow = false
     },
     onMessageHandler(event) {
-      console.log('onMessageHandler==============================:', event.data)
-      return
       if (
         event.data &&
         event.data.lastIndexOf('forceQuit') > -1 &&
@@ -216,7 +208,6 @@ export default {
       }
     },
     async onOpen(event) {
-      console.debug('onMessageHandler==========================', event)
       if (this.alreadyLogin) {
         // 注册 websocket
         this.websocket.send(
@@ -249,7 +240,7 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style scoped>
 .main {
   margin: 8px 0 8px 8px;
   padding: 0;

@@ -115,12 +115,7 @@ html body {
 .bg-green {
 	background-color: #009999;
 }
-.bg-white {
-	background-color: #ffffff;
-}
-.bg-red {
-	background-color: red;
-}
+
 /* -- 字体大小 -- */
 .text-xs {
 	font-size: 12px;
@@ -228,7 +223,7 @@ html body {
   background: #AAAAAA;
 }
 .layout-webkitScrollbar::-webkit-scrollbar-track {
-  border-radius: 40px;
+  border-radius: 4px;
   background: #ffffff;
 }
 
@@ -284,37 +279,5 @@ html body {
 		}
 	}
 	
-}
-
-
-// 边框上方加文字
-.frame {
-  padding: 10px;
-  border: 1px solid #aab2b4;
-  position: relative;
-.frame-title {
-	position: absolute;
-	left: 20px;
-	top: -12px;
-	background: #ffffff;
-}
-}
-
-// 列表文字对齐
-.textAlign-between {
-	clear: both;
-    overflow: hidden;
-	.textAlign-between-title {
-        text-align: justify;
-		width: 36px;
-        float: left;
-		&:after {
-			content: '.';
-			width: 100%;
-			display: inline-block;
-			overflow: hidden;
-			height: 0;
-		}
-	}
 }
 

@@ -30,13 +30,14 @@
       padding-right: 14px
       font-size: 15px
       font-weight: 700
+
 /*container样式*/
 .app-container
   @include themify($themes)
     /*左边菜单样式*/
     .el-menu-parentDiv
-      width: $layout-aside-width
       background-color: themed('left-menu-background')
+      width: $layout-aside-width
     .el-submenu .el-menu-item
       min-width: unset
 
@@ -84,28 +85,28 @@
       color: themed('font-color')
 
 /*原生table*/
-.L-table 
+.L-table
   @include themify($themes)
-    width: 100%;
-    border-collapse: collapse;
-    border-spacing: 0;
-    display: table;
-    table-layout: fixed;
-    border: 1px solid #cccdd4;
+    width: 100%
+    border-collapse: collapse
+    border-spacing: 0
+    display: table
+    table-layout: fixed
+    border: 1px solid #cccdd4
     th
-      font-weight: 700;
+      font-weight: 700
       background-color: themed('table-th-background')
       color: themed('table-th-color')
-      height: 32px;
-    td 
-      font-weight: 400;
-      color: rgba(0, 0, 0, 0.75);
-      padding: 4px;
-  
+      height: 32px
+    td
+      font-weight: 400
+      color: rgba(0, 0, 0, 0.75)
+      padding: 4px
+
 .L-table th,
-.L-table td 
-  border: 1px solid #cccdd4;
-  font-size: 14px;
-  display: table-cell;
-  text-align: center;
-  font-family: PingFang SC, PingFang SC-Bold;
+.L-table td
+  border: 1px solid #cccdd4
+  font-size: 14px
+  display: table-cell
+  text-align: center
+  font-family: PingFang SC, PingFang SC-Bold
