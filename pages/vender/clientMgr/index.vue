@@ -213,7 +213,6 @@ export default {
       var info = await $post(GET_USER_VENDERS_DEPARTMENTS, { uuid: uuid })
       this.urlMgrList = fixMenus(JSON.parse(info))
       this.currentMenu = this.urlMgrList[0]
-      console.log('this.currentMenu====', JSON.parse(info))
       this.findResourcesByDeptUUID()
       console.debug('客户权限信息:', fixMenus(JSON.parse(info)))
     },
@@ -235,18 +234,15 @@ export default {
       // var uuid = this.$store.state.user.deptUUID
       var info = await $post(GET_RESOURCES_BY_VENDER_UUID, { uuid: uuid })
       this.treeResources = fixMenus(JSON.parse(info))
-      console.log('====================', this.treeResources)
     },
     /**
      * @author: wangHongFei
      * @description: 查询页面树
      */
     async findResourcesByDeptUUID() {
-      console.log('===')
       var uuid = this.currentMenu.uuid
 
       var info = await $post(GET_RESOURCES_BY_DEPT_UUID, { uuid: uuid })
-      console.log(uuid, '查询页面树：', fixMenus(JSON.parse(info)))
       var childrenList = []
       var resourcesByVender = fixMenus(JSON.parse(info))
       resourcesByVender.map(function(item) {

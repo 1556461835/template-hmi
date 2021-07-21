@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2021-04-07 13:58:25
- * @LastEditTime: 2021-07-09 16:38:43
+ * @LastEditTime: 2021-07-21 13:48:06
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \hmi\layouts\default.vue
@@ -10,7 +10,7 @@
   <div :class="themeClass">
     <Header :navigation-menu="navigationMenu" @clickMenus="handleMenusClick" @changeThem="changeThem"></Header>
     <el-container class="app-container">
-      <Aside :style="'height:' + (parseInt(windowHeight) - 88) + 'px;'" :nav-menus='menus' :editable-tabs-value='checkPath' ></Aside>
+      <Aside v-show="isShowAside(menus)" :style="'height:' + (parseInt(windowHeight) - 88) + 'px;'" :nav-menus='menus' :editable-tabs-value='checkPath' ></Aside>
       <el-container :style="'height:' + (parseInt(windowHeight) - 88) + 'px;'">
         <div class="layout-webkitScrollbar main">
           <nuxt />
@@ -83,11 +83,7 @@ export default {
     $route: {
       handler: function(val, oldVal) {
         if (val.path !== '/') {
-          for (const item of this.menus) {
-            if (val.path == item.router) {
-              this.title = item.name + '-' + getConfig('config.title')
-            }
-          }
+          this.showTitle(val, this.navigationMenu)
           this.checkPath = val.path
         } else {
           if (this.navigationMenu.length !== 0) {
@@ -116,6 +112,23 @@ export default {
     this.handleWindowHeight()
   },
   methods: {
+    showTitle(val, menus) {
+      for (const item of menus) {
+        if (val.path == item.router) {
+          this.title = item.name + '-' + getConfig('config.title')
+        }
+        if (item.children && item.children.length > 0) {
+          this.showTitle(val, item.children)
+        }
+      }
+    },
+    // 用于控制显示左边菜单
+    isShowAside(arr) {
+      if (arr.length != 0) {
+        return true
+      }
+      return false
+    },
     changeThem(e) {
       this.theme = e
     },
@@ -147,6 +160,7 @@ export default {
       this.$nuxt.$store.commit('allMenus', JSON.parse(info))
       this.navigationMenu = fixMenus(JSON.parse(info))
       this.filterMenus(this.navigationMenu)
+
       if (this.$route.path !== '/') {
         let pathList = this.$route.path.split('/')
         for (const item of this.navigationMenu) {

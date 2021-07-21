@@ -1,7 +1,7 @@
 <!--
  * @Author: lcx
  * @Date: 2021-04-08 09:23:38
- * @LastEditTime: 2021-07-02 16:48:10
+ * @LastEditTime: 2021-07-21 10:45:14
  * @LastEditors: Please set LastEditors
  * @Description: 侧导航栏
  * @FilePath: \hmi\layouts\components\Aside.vue
@@ -196,9 +196,6 @@ export default {
         }
       ] // 侧导航目录
     }
-  },
-  mounted() {
-    console.log('设置默认节点', this.editableTabsValue)
   }
 }
 </script>

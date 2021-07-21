@@ -1,7 +1,7 @@
 <!--
  * @Author: lcx
  * @Date: 2021-04-07 14:24:18
- * @LastEditTime: 2021-05-27 14:18:56
+ * @LastEditTime: 2021-07-21 13:24:57
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \hmi\layouts\components\Header.vue
@@ -29,7 +29,7 @@
         <div>
           <el-button v-for="(v,index) in navigationMenu" :key="index" size="mini"
               :style="{background: v.id == checkMenu.id ? '#3F66E4': '#409EFF'}"
-              type="primary" @click="handleMenuClick(v)">{{v.name}}</el-button>
+              type="primary" @click="handleMenuClick(v)"> {{v.name}} </el-button>
         </div>
       </div>
       <!-- user -->
@@ -154,8 +154,15 @@ export default {
       this.time.week = moment().day()
     },
     handleMenuClick(menus) {
-      this.checkMenu = menus
-      this.$emit('clickMenus', menus)
+      try {
+        this.checkMenu = menus
+        this.$emit('clickMenus', menus)
+        if (menus.children.length == 0) {
+          this.$router.push({ path: menus.router }, () => {})
+        }
+      } catch (error) {
+        console.error(error)
+      }
     }
   }
 }
